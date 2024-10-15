@@ -1,0 +1,28 @@
+<h2 id="endpoint-teemboom_comments">Endpoint: <code class="language-plaintext highlighter-rouge">/teemboom_comments</code></h2>
+<p><strong>Method:</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+<strong>Description:</strong> Retrieves webpage comments by <code class="language-plaintext highlighter-rouge">page_id</code>.</p>
+<h3 id="request">Request</h3>
+<p><strong>Body:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "page_id": "string",
+    "filter": "oldest|newest|relevance|top",  
+    "range": "list|Array",
+}
+</code></pre></div></div>
+
+<h3 id="response">Response</h3>
+<p><strong>Success:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": True, 
+    "data": {
+        "comments_no": "int", 
+        "comments": "list"
+    }
+}
+</code></pre></div></div>
+<p><strong>Failure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": False, 
+    "message": "string"
+}
+</code></pre></div></div>

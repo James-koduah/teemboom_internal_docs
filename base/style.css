@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --ma-bg: #fff;
+    --text-color: #333;
+}
+
+body{
+    width: 100%;
+    background-color: var(--ma-bg);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5px;
+}
+
+main{
+    display: flex;
+}
+
+#sidebar{
+    width: 350px;
+    padding: 50px 20px;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    flex-shrink: 0;
+}
+#sidebar div{
+    width: 90%;
+    padding: 5px 5%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#sidebar div:hover{
+    background: #333;
+}
+#sidebar div p{
+    font-size: 3em;
+}
+
+
+.content_active{
+    display: block !important;
+}
+.nav_active{
+    background: #555;
+}
+
+#content{
+    width: 90%;
+    padding: 50px 5%;
+
+}
+.content_item{
+    display: none;
+}
+
+/* Basic Markdown Styling */
+#content h2 {
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 6em;
+}
+
+#content h3 {
+    font-weight: 400;
+    margin-top: 29px;
+    margin-bottom: 5px;
+    font-size: 4em;
+}
+
+#content p {
+    line-height: 160%;
+    font-size: 3.1em;
+}
+
+
+
+#content code {
+    background-color: #f4f6f8;
+    border-radius: 4px;
+    padding: 7px 4px 0 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 160%;
+    color: #4a558f;
+}
+
+/* Inline Code */
+#content p code {
+    background-color: #f6f8fa;
+    border-radius: 4px;
+    padding: 0.2em 0.4em;
+    color: #4a558f;
+    font-size: .9em;
+
+}
+
+/* Styling for Request and Response Sections */
+#content strong {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Code Blocks */
+#content pre {
+    width: 90%;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    padding: 15px 4%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    margin: 1em 0;
+    border-left: 4px solid #ddd;
+}
+
+#content pre code{
+    font-size: .9em;
+}
+

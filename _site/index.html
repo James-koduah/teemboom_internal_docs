@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEEMBOOM API DOCS</title>
+    <link rel="stylesheet" href="base/style.css">
+</head>
+<body>
+    <main>
+        <div id="sidebar">
+            <div class="sidebarItem nav_active" onclick="displayContent('overview', this)">
+                <p>Overview</p>
+            </div>
+            
+            <div class="sidebarItem" onclick="displayContent('/submit_comment', this)">
+                <p>/submit_comment</p>
+            </div>
+            
+            <div class="sidebarItem" onclick="displayContent('/teemboom_comments', this)">
+                <p>/teemboom_comments</p>
+            </div>
+            
+            <div class="sidebarItem" onclick="displayContent('/teemboom_config', this)">
+                <p>/teemboom_config</p>
+            </div>
+            
+        </div>
+        <div id="content">
+            <div id="overview" class="content_item content_active">
+                <h2>Overview</h2>
+                <p>This is an internal documentation I am writing for the internal api's of TEEMBOOM</p>
+            </div>
+            
+            <div class="content_item" id="/submit_comment">
+                <h2 id="endpoint-submit_comment">Endpoint: <code class="language-plaintext highlighter-rouge">/submit_comment</code></h2>
+<p><strong>Method:</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+<strong>Description:</strong> Submit a comment.</p>
+<h3 id="request">Request</h3>
+<p><strong>Body</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    'content': "comment text", 
+    'user': "user Object|dict", 
+    'page_id': "string"
+}
+</code></pre></div></div>
+
+            </div>
+            
+            <div class="content_item" id="/teemboom_comments">
+                <h2 id="endpoint-teemboom_comments">Endpoint: <code class="language-plaintext highlighter-rouge">/teemboom_comments</code></h2>
+<p><strong>Method:</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+<strong>Description:</strong> Retrieves webpage comments by <code class="language-plaintext highlighter-rouge">page_id</code>.</p>
+<h3 id="request">Request</h3>
+<p><strong>Body:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "page_id": "string",
+    "filter": "oldest|newest|relevance|top",  
+    "range": "list|Array",
+}
+</code></pre></div></div>
+
+<h3 id="response">Response</h3>
+<p><strong>Success:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": True, 
+    "data": {
+        "comments_no": "int", 
+        "comments": "list"
+    }
+}
+</code></pre></div></div>
+<p><strong>Failure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": False, 
+    "message": "string"
+}
+</code></pre></div></div>
+
+            </div>
+            
+            <div class="content_item" id="/teemboom_config">
+                <h2 id="endpoint-teemboom_config">Endpoint: <code class="language-plaintext highlighter-rouge">/teemboom_config</code></h2>
+<p><strong>Method:</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+<strong>Description:</strong> Retrieves site configuration by <code class="language-plaintext highlighter-rouge">page_id</code>.</p>
+<h3 id="request">Request</h3>
+<p><strong>Body:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"page_id": "string"}
+</code></pre></div></div>
+<h3 id="response">Response</h3>
+<p><strong>Success:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": True, 
+    "data": config_data -&gt; dict
+}
+</code></pre></div></div>
+<p><strong>Failure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": False, 
+    "message": "string"
+}
+</code></pre></div></div>
+
+<!-- 
+## Endpoint: `/teemboom_comments`
+**Method:** `POST`
+**Description:** Retrieves webpage comments by `page_id`.
+### Request
+**Body:**
+```
+{"page_id": "string",
+"filter": "oldest|newest|relevance|top",  
+"range": "list|Array",}
+```
+
+### Response
+**Success:**
+```{"status": True, "data": {"comments_no": "int", "comments": "list"}}```
+**Failure:**
+```{"status": False, "message": "string"}```
+
+ -->
+
+            </div>
+            
+        </div>
+    </main>
+    <script src="base/app.js"></script>
+</body>
+</html>

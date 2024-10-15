@@ -1,0 +1,37 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEEMBOOM API DOCS</title>
+    <link rel="stylesheet" href="base/style.css">
+</head>
+<body>
+    <main>
+        <div id="sidebar">
+            <div class="sidebarItem nav_active" onclick="displayContent('overview', this)">
+                <p>Overview</p>
+            </div>
+            {% for doc in site.docs %}
+            <div class="sidebarItem" onclick="displayContent('{{doc.title}}', this)">
+                <p>{{doc.title}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="content">
+            <div id="overview" class="content_item content_active">
+                <h2>Overview</h2>
+                <p>This is an internal documentation I am writing for the internal api's of TEEMBOOM</p>
+            </div>
+            {% for doc in site.docs %}
+            <div class="content_item" id="{{doc.title}}">
+                {{doc.content}}
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="base/app.js"></script>
+</body>
+</html>

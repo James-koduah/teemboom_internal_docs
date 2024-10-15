@@ -1,0 +1,40 @@
+<h2 id="endpoint-teemboom_config">Endpoint: <code class="language-plaintext highlighter-rouge">/teemboom_config</code></h2>
+<p><strong>Method:</strong> <code class="language-plaintext highlighter-rouge">POST</code>
+<strong>Description:</strong> Retrieves site configuration by <code class="language-plaintext highlighter-rouge">page_id</code>.</p>
+<h3 id="request">Request</h3>
+<p><strong>Body:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"page_id": "string"}
+</code></pre></div></div>
+<h3 id="response">Response</h3>
+<p><strong>Success:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": True, 
+    "data": config_data -&gt; dict
+}
+</code></pre></div></div>
+<p><strong>Failure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "status": False, 
+    "message": "string"
+}
+</code></pre></div></div>
+
+<!-- 
+## Endpoint: `/teemboom_comments`
+**Method:** `POST`
+**Description:** Retrieves webpage comments by `page_id`.
+### Request
+**Body:**
+```
+{"page_id": "string",
+"filter": "oldest|newest|relevance|top",  
+"range": "list|Array",}
+```
+
+### Response
+**Success:**
+```{"status": True, "data": {"comments_no": "int", "comments": "list"}}```
+**Failure:**
+```{"status": False, "message": "string"}```
+
+ -->
